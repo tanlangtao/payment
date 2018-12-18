@@ -10,10 +10,10 @@
             var height = window.screen.height;
             window.addEventListener('resize',()=>{
                 var newH=window.innerHeight;
-                if(height>newH){
+                if(height-newH>50){
                     app.style.top='-80px'
-                }else if(height==newH){
-                    app.style.top= 0
+                }else{
+                    app.style.top=0
                 }
             })
         }else{
