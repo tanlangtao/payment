@@ -3,10 +3,6 @@
         var body = document.getElementsByTagName('body')[0];
         var html = document.getElementsByTagName('html')[0];
         var app = document.getElementById("root");
-        // var width =document.body.offsetWidth;
-        // var height = document.body.offsetHeight;
-        // const height =document.body.scrollHeight;
-        // const width =document.body.scrollWidth;
         var u = navigator.userAgent;
         var isAndroid = u.indexOf('Android') > -1 || u.indexOf('Adr') > -1; //android终端
         if(isAndroid){
@@ -16,7 +12,7 @@
                 var newH=window.innerHeight;
                 if(height>newH){
                     app.style.top='-80px'
-                }else{
+                }else if(height==newH){
                     app.style.top= 0
                 }
             })
