@@ -12,14 +12,14 @@
         if(isAndroid){
             var width =window.screen.width;
             var height = window.screen.height;
-            window.onresize =()=>{
-                var thisHeight = window.screen.availHeight;
+            window.addEventListener("resize",()=>{
+                var thisHeight = document.body.clientHeight;
                 if(height - thisHeight >50){
-                    app.style.top ='-40%';
+                    app.style.top ='-100px';
                 }else{
                     app.style.top='0';
                 }
-            }
+            })
         }else{
             var height =document.body.scrollHeight;
             var width =document.body.scrollWidth;
