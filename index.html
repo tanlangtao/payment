@@ -8,12 +8,27 @@
         if(isAndroid){
             var width =window.screen.width;
             var height = window.screen.height;
+            //监听安卓软键盘弹出，将界面往上拉
             window.addEventListener('resize',()=>{
                 var newH=window.innerHeight;
                 if(height-newH>50){
-                    app.style.top='-80px'
+                    var idx =1
+                    var timer =setInterval(() => {
+                        idx+=1.5
+                        app.style.top=-idx+'px';
+                        if(idx >= 100){
+                            clearInterval(timer)
+                        }
+                    }, 1);
                 }else{
-                    app.style.top=0
+                    var idx = 1
+                    var timer =setInterval(() => {
+                        idx-=1.5
+                        app.style.top=-idx+'px';
+                        if(idx <= 0){
+                            clearInterval(timer)
+                        }
+                    }, 1);
                 }
             })
         }else{
